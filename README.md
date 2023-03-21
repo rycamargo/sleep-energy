@@ -24,6 +24,8 @@ state-of-the-art Deep Learning models using two public datasets.
 
 To execute the model, you can use the script `src/energy-model.py`.
 
+*Example:* energy-model.py --writefile 1 --optparams 0 --model usleep --part 0 --dataset edf
+
 **Parameters:**
 
     '--optparams', type=int, default=0,
@@ -41,9 +43,9 @@ To execute the model, you can use the script `src/energy-model.py`.
     '--dataset', type=str, default='edf',
     Name of the dataset to optimize ['edf', 'dreamer', 'all']
 
-**Input files:**
+**Input files:** Located in `data` folder
 
-`data/input_[dataset]_[model]_part_[0-4].pkl`
+`input_[dataset]_[model]_part_[0-4].pkl`
 
 A pickle file containing a DataFrame `data_per_subject` with 5 columns and one line per subject and sleep session:
 
@@ -55,12 +57,12 @@ A pickle file containing a DataFrame `data_per_subject` with 5 columns and one l
 
 There is one file per `model` and `dataset`. Also, we used 5-fold cross-validation, and each `part` represents one fold.
 
-**Output files:**
+**Output files:** Generated at `output` folder
 
 `sleep-results-[dataset].csv`: A csv file with multiple metrics, such as accuracy, f1-score,
 precision, recall, and balanced accuracy. Each line contains the results for a single subject and sleep record,
 in addition to parameter values and neural network model used for the predictions. 
 
-`data/energy-[model]-[0-4]-[dataset]-opt.npz`: Contains numpy matrices with information from the energy-optimization
+`energy-[model]-[0-4]-[dataset]-opt.npz`: Contains numpy matrices with information from the energy-optimization
 process, including the confusion and transition probability matrices, the target hypnograms, 
 the hypnograms predicted by the NN, and the hypnograms optimized byt the energy model.
