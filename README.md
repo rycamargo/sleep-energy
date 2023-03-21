@@ -5,7 +5,7 @@ Raphael Yokoingawa de Camargo.*
 
 **IEEE Access**, Accepted March, 2023.
 
-###Abstract: 
+### Abstract: 
 Sleep is essential for physical and mental health. Polysomnography (PSG) procedures
 are labour-intensive and time-consuming, making diagnosing sleep disorders difficult. Automatic
 sleep staging using ML-based methods has been studied extensively, but frequently provides noisier
